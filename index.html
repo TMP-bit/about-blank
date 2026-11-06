@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My About:Blank Canvas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+        .badge {
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .input-area {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #4a90e2;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e7d32;
+            min-height: 30px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="badge">Middle School Web Lab</div>
+        <h1>Welcome to Your First Live Page!</h1>
+        <p>You successfully used <strong>about:blank</strong> to inject your own custom HTML and script. This proves that you can run code entirely inside your browser's temporary memory!</p>
+        
+        <div class="input-area">
+            <input type="text" id="nameInput" placeholder="Enter your name here...">
+            <button onclick="greetUser()">Click Me</button>
+        </div>
+
+        <div id="output"></div>
+
+        <div class="footer">
+            Tip: Refreshing the about:blank tab will clear this code. Copy your source if you want to keep it!
+        </div>
+    </div>
+
+    <script>
+        function greetUser() {
+            const name = document.getElementById('nameInput').value;
+            const outputDiv = document.getElementById('output');
+            
+            if (name.trim() === "") {
+                outputDiv.style.color = "#d32f2f";
+                outputDiv.innerHTML = "Please type a name first! 🤔";
+            } else {
+                outputDiv.style.color = "#2e7d32";
+                outputDiv.innerHTML = `🚀 Awesome job, ${name}! Your code works perfectly.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
